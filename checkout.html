@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout — FRESH BITE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="site-header slim">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">FB</div>
+        <div class="brand-text">
+          <h1>FRESH BITE</h1>
+          <p>by Aura Zeta</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Kembali</a>
+      </nav>
+      <div></div>
+    </div>
+  </header>
+
+  <main class="container checkout-grid">
+    <section>
+      <h3>Checkout</h3>
+      <form id="checkoutForm" class="card">
+        <label>Nama Lengkap
+          <input required type="text" name="name" placeholder="Nama kamu"/>
+        </label>
+        <div class="grid-2">
+          <label>No. HP/WA
+            <input required type="tel" name="phone" placeholder="08xx"/>
+          </label>
+          <label>Metode Pembayaran
+            <select name="payment" required>
+              <option value="transfer">Transfer Bank</option>
+              <option value="ewallet">E-Wallet</option>
+              <option value="cod">COD</option>
+            </select>
+          </label>
+        </div>
+        <label>Alamat Pengantaran
+          <textarea required name="address" rows="3" placeholder="Jalan, nomor, patokan"></textarea>
+        </label>
+        <div class="summary">
+          <h4>Ringkasan Pesanan</h4>
+          <div id="summaryItems"></div>
+          <div class="cart-total">Total: <strong id="summaryTotal">Rp0</strong></div>
+        </div>
+        <button class="btn primary" type="submit">Buat Pesanan</button>
+      </form>
+      <div id="orderSuccess" class="success card" hidden>
+        <h4>Terima kasih!</h4>
+        <p>Pesanan kamu sudah tercatat. Kami akan menghubungi melalui WhatsApp untuk konfirmasi.</p>
+        <a class="btn ghost" href="index.html">Kembali ke beranda</a>
+      </div>
+    </section>
+
+    <aside class="card tips">
+      <h4>Tips sehat dari Aura</h4>
+      <p>Minum air putih dulu sebelum makan, dan pilih dressing rendah gula ya ✨</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> FRESH BITE — Aura Zeta.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

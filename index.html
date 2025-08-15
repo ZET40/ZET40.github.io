@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FRESH BITE — Makanan Sehat Enak</title>
+  <link rel="preload" href="assets/audio/ambient.wav" as="audio">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <audio id="bgm" src="assets/audio/ambient.wav" loop></audio>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">FB</div>
+        <div class="brand-text">
+          <h1>FRESH BITE</h1>
+          <p>by Aura Zeta</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <div class="header-actions">
+        <button id="audioToggle" aria-label="Toggle BGM" class="btn ghost">🔈</button>
+        <button id="cartButton" class="btn primary">🛒 Keranjang <span id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h2>Makan Sehat, Rasa Hebat.</h2>
+        <p>
+          Toko makanan sehat dengan bahan segar pilihan. Smoothies, salad bowl, wrap, dan camilan
+          yang menggugah selera — tanpa ribet.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#menu">Lihat Menu</a>
+          <a class="btn ghost" href="checkout.html">Checkout Cepat</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/img/hero.svg" alt="Koleksi menu sehat FRESH BITE yang tampak lezat"/>
+      </div>
+    </div>
+
+    <div class="slider" id="slider">
+      <div class="slides">
+        <img src="assets/img/salad.svg" alt="Salad segar"/>
+        <img src="assets/img/bowl.svg" alt="Healthy bowl"/>
+        <img src="assets/img/smoothie.svg" alt="Smoothie hijau"/>
+      </div>
+      <button class="slide-btn prev" aria-label="Sebelumnya">‹</button>
+      <button class="slide-btn next" aria-label="Berikutnya">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+  <section id="menu" class="menu-section container">
+    <h3>Menu Andalan</h3>
+    <div class="menu-grid" id="menuGrid">
+      <!-- Items injected by JS -->
+    </div>
+  </section>
+
+  <section id="about" class="about container">
+    <div class="about-card">
+      <h4>Kenapa FRESH BITE?</h4>
+      <p>
+        Kami percaya makanan sehat harus <strong>mudah</strong>, <strong>lezat</strong>,
+        dan <strong>terjangkau</strong>. Bahan pilihan lokal, dressing rendah gula,
+        dan porsi pas untuk aktivitas harianmu.
+      </p>
+      <ul class="ticks">
+        <li>Bahan segar harian</li>
+        <li>Tanpa pewarna & perisa buatan</li>
+        <li>Opsi vegan & gluten-free</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact container">
+    <h4>Hubungi Kami</h4>
+    <p>DM Instagram @freshbite.id atau email <a href="mailto:hello@freshbite.id">hello@freshbite.id</a></p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> FRESH BITE — Aura Zeta. All rights reserved.</p>
+      <a class="btn ghost small" href="checkout.html">Pergi ke Checkout</a>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-head">
+      <h5>Keranjang</h5>
+      <button id="closeCart" class="btn ghost">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-foot">
+      <div class="cart-total">Total: <strong id="cartTotal">Rp0</strong></div>
+      <div class="cart-actions">
+        <button id="clearCart" class="btn ghost">Kosongkan</button>
+        <a href="checkout.html" class="btn primary">Checkout</a>
+      </div>
+    </div>
+  </aside>
+
+  <div id="overlay" class="overlay"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
